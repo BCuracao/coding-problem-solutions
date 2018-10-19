@@ -8,7 +8,6 @@ import java.util.Stack;
  * Return true if correct, false it wrong
 */
 public class OpenClosingBrackets {
-	
 	private static boolean matchingBrackets(char[] brackets) {
 		if(brackets.length == 0) {
 			return true;
@@ -46,3 +45,4 @@ public class OpenClosingBrackets {
 		System.out.println(matchingBrackets(brackets));
 	}
 }
+
