@@ -8,10 +8,10 @@ import java.util.stream.Stream;
 
 
 /* DAILY CODE DAY #20 
- * @Leetcode: We are given two sentences A and B. A sentence is a string of space separated words.  
- * Each word consists only of lowercase letters. A word is uncommon if it appears exactly once 
- * in one of the sentences, and does not appear in the other sentence.
- * Return a list of all uncommon words. */
+ * @Leetcode: We are given two sentences A and B. A sentence is a string of space 
+ * separated words. Each word consists only of lowercase letters. A word is 
+ * uncommon if it appears exactly once in one of the sentences, and does not appear 
+ * in the other sentence. Return a list of all uncommon words. */
 public class UncommonWords {
 	
 	static List<String> result = new ArrayList<String>();
@@ -39,7 +39,8 @@ public class UncommonWords {
 			}
 		}
 		// Merge both arrays
-		Object[] merged = Stream.concat(Arrays.stream(Ainput), Arrays.stream(Binput)).toArray();
+		Object[] merged = Stream.concat(Arrays.stream(Ainput), 
+				Arrays.stream(Binput)).toArray();
 		for (int i = 0; i < merged.length; i++) {
 			if(merged[i] != "") {
 				result.add((String)merged[i]);
