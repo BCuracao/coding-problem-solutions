@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class BookReading {
+class BookReading {
 	
 	private static long startTime = System.currentTimeMillis();
 	
