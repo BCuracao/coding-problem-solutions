@@ -4,6 +4,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Vector;
 
+/**
+ * 
+ * @author Basti
+ * Runtime error: Program probably takes too long to execute.
+ * TODO: Optimize
+ *
+ */
+
 class BookReading {
 	
 	private static long startTime = System.currentTimeMillis();
