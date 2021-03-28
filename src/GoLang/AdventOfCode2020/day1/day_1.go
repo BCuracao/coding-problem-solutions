@@ -2,30 +2,37 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"strconv"
 )
 
+const YEAR = 2020
+
 func main() {
-	file, err := ioutil.ReadFile("input_1.txt")
+
+	var empty struct{}
+
+	f, err := ioutil.ReadFile("input_1.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	m := make(map[int]int, 0)
-	for _, line := range bytes.Split(file, []byte("\n")) {
-		n, err := strconv.Atoi(string(line))
+	m := make(map[int]struct{})
+	for _, l := range bytes.Split(f, []byte("\n")) {
+		n, err := strconv.Atoi(string(l))
 		if err != nil {
-			log.Println((err))
+			log.Println(err)
 			continue
 		}
-		m[n]++
+		m[n] = empty
 	}
-	for y, _ := range m {
-		x := 2020 - y
-		if _, ok := m[x]; ok {
-			log.Printf("%d+%d=2020 / %d*%d=%d", x, y, x, y, x*y)
-			return
+	for k, _ := range m {
+		for j, _ := range m {
+			z := YEAR - k - j
+			if _, ok := m[z]; ok {
+				fmt.Printf("%d+%d+%d=2020 - %d*%d*%d=%d", k, j, z, k, j, z, k*j*z)
+			}
 		}
 	}
 }
